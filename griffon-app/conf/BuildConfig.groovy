@@ -1,11 +1,10 @@
 griffon.project.dependency.resolution = {
-    inherits("global") 
-    log "warn" 
+    inherits("global")
+    log "warn"
     repositories {
-        griffonPlugins()
         griffonHome()
-        griffonCentral()
-        flatDir name: 'lipstiklfPluginLib', dirs: 'lib'
+        String basePath = pluginDirPath? "${pluginDirPath}/" : ''
+        flatDir name: "lookAndFeelLipstikLibDir", dirs: ["${basePath}lib"]
     }
     dependencies {
         compile 'com.lipstiklf:lipstikLF:1.1'
@@ -20,4 +19,16 @@ griffon {
     }
 }
 
-griffon.jars.destDir='target/addon'
+log4j = {
+    // Example of changing the log pattern for the default console
+    // appender:
+    appenders {
+        console name: 'stdout', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
+    }
+
+    error 'org.codehaus.griffon',
+          'org.springframework',
+          'org.apache.karaf',
+          'groovyx.net'
+    warn  'griffon'
+}

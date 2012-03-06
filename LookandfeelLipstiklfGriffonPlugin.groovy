@@ -1,6 +1,6 @@
 /* --------------------------------------------------------------------
    Lookandfeel Lipstiklf
-   Copyright (C) 2011 Andres Almiray
+   Copyright (C) 2011-2012 Andres Almiray
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -22,31 +22,49 @@
  */
 class LookandfeelLipstiklfGriffonPlugin {
     // the plugin version
-    def version = "0.2"
+    String version = '0.3'
     // the version or versions of Griffon the plugin is designed for
-    def griffonVersion = '0.9.3 > *' 
+    String griffonVersion = '0.9.5 > *'
     // the other plugins this plugin depends on
-    def dependsOn = [lookandfeel: '0.5']
+    Map dependsOn = [lookandfeel: '0.6']
     // resources that are included in plugin packaging
-    def pluginIncludes = []
+    List pluginIncludes = []
     // the plugin license
-    def license = 'GNU Public License 2.1'
+    String license = 'GNU General Public License 2'
     // Toolkit compatibility. No value means compatible with all
     // Valid values are: swing, javafx, swt, pivot, gtk
-    def toolkits = ['swing']
+    List toolkits = ['swing']
     // Platform compatibility. No value means compatible with all
     // Valid values are:
     // linux, linux64, windows, windows64, macosx, macosx64, solaris
-    def platforms = []
+    List platforms = []
+    // URL where documentation can be found
+    String documentation = ''
+    // URL where source can be found
+    String source = 'https://github.com/griffon/griffon-lookandfeel-lipstik-plugin'
 
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Lipstiklf Look & Feel'
-    def description = '''
-Lipstiklf Look & Feel
-http://sourceforge.net/projects/lipstiklf
+    List authors = [
+        [
+            name: 'Andres Almiray',
+            email: 'aalmiray@yahoo.com'
+        ]
+    ]
+    String title = 'Pluggable Look & Feel based on Lipstik'
+    String description = '''
+Pluggable Look & Feel based on [Lipstik][1].
+
+Usage
+-----
+
+Refer to the [lookandfeel][2] plugin to find out how setup `lookAndFeel` and `theme` properties in the configuration.
+
+LookAndFeel and Themes
+----------------------
+| *LookAndFeel* | *Theme* |
+| ------------- | ------- |
+| Lipstik       | Lipstik |
+
+[1]: http://sourceforge.net/projects/lipstiklf/
+[2]: /plugin/lookandfeel
 '''
-
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/LookandfeelLipstiklf+Plugin'
 }
