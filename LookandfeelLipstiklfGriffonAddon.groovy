@@ -1,6 +1,6 @@
 /* --------------------------------------------------------------------
    Lookandfeel Lipstiklf
-   Copyright (C) 2011 Andres Almiray
+   Copyright (C) 2011-2012 Andres Almiray
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
